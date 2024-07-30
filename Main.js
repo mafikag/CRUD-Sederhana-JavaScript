@@ -1,7 +1,7 @@
 /*
 
-finish : fitur show, add
-Note   : buat besok menambahkan fitur add Update
+finish : fitur show, add, update
+Note   : buat besok menambahkan fitur add Delete
 
 */
 
