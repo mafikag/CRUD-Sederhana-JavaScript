@@ -60,6 +60,31 @@ const add = (data) =>{
     }
 };
 
+const update = (data) =>{
+    let ubah = input("Silahkan masukan data ke- berapa yang ingin dirubah : ");
+    let index = Number(ubah) - 1;
+    try {
+        let dumy_data = {};
+        console.log("\nSilahkan memasukkan data baru :");
+        let t_nim = input("Masukan NIM : ");
+        let t_nama = input("Masukan Nama : ");
+        let t_user = input("Masukan Username : ");
+        let t_pass = input("Masukan Password : ");
+        
+        dumy_data = {
+            nim : t_nim,
+            nama : t_nama,
+            user : t_user,
+            pass : t_pass
+        };
+    
+        data.fill(dumy_data,index,index+1);
+        console.log(`\n-- Data berhasil diubah^^ --\n`);
+        } catch (error) {
+            console.error(`\n-- Data gagal diubah!! --\n`);
+        }
+};
+
 // main program
 while(temp == true){
 
@@ -82,7 +107,7 @@ while(temp == true){
             add(data);
             break;
         case 3:
-            
+            update(data);
             break;
         case 4:
             
@@ -96,5 +121,5 @@ while(temp == true){
     if (pilih != "y") {
         temp = false;
     }
-    console.log("\nThank you and Have a nice day bruhh^^");
 }
+console.log("\nThank you and Have a nice day bruhh^^");
