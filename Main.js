@@ -1,7 +1,7 @@
 /*
 
-finish : fitur show, add, update
-Note   : buat besok menambahkan fitur add Delete
+finish : fitur show, add, update, delete
+Note   : buat besok masih difikirkan
 
 */
 
@@ -61,6 +61,7 @@ const add = (data) =>{
 };
 
 const update = (data) =>{
+    show(data);
     let ubah = input("Silahkan masukan data ke- berapa yang ingin dirubah : ");
     let index = Number(ubah) - 1;
     try {
@@ -83,6 +84,18 @@ const update = (data) =>{
         } catch (error) {
             console.error(`\n-- Data gagal diubah!! --\n`);
         }
+};
+
+const hapus = (data) =>{
+    try {
+        show(data);
+        let del = input("Masukan data ke- berapa yang ingin anda hapus : ");
+        let index = Number(del) - 1;
+        data.pop(index);
+        console.log(`\n-- Data berhasil dihapus^^ --\n`);
+    } catch (error) {
+        console.error(`\n-- Data gagal dihapus!! --\n`);
+    };
 };
 
 // main program
@@ -110,7 +123,7 @@ while(temp == true){
             update(data);
             break;
         case 4:
-            
+            hapus(data);
             break;
         default:
 
